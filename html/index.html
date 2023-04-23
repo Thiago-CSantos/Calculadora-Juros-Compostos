@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/style.css">
+    <title>Calculadora Juros Compostos</title>
+</head>
+
+<body>
+    <section class="container">
+
+        <ul>
+            <li style="color: red; list-style: none;">(M = P * (1 + r/100)^n)</li>
+            
+            <li>M: montante final (valor total com juros)</li>
+            <li>P: principal (valor inicial)</li>
+            <li>r: taxa de juros (em porcentagem)</li>
+            <li>n: número de períodos de capitalização (geralmente em meses ou anos)</li>
+        </ul>
+
+        <h1>Simulador de Juros Compostos</h1>
+        <form class="formulario">
+
+            <label for="valorPrincipal">Valor principal:(P)</label>
+            <input type="number" id="valorPrincipal" class="calcular">
+
+            <label for="taxaJuros">taxa de juros (em porcentagem):(r)</label>
+            <input type="number" id="taxaJuros" class="calcular">
+
+            <label for="meses">Número de períodos de capitalização em meses:(n)</label>
+            <input type="number" id="meses" class="calcular">
+
+            <button type="submit" class="btn">Montante final(M)</button>
+        </form>
+
+        <div id="resultado"></div>
+    </section>
+
+    <script src="../JS/main.js"></script>
+</body>
+
+</html>
