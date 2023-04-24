@@ -1,29 +1,35 @@
-const formulario = document.querySelector('.formulario')
+class Calculadora {
+    constructor() {
+        this.formulario = document.querySelector('.formulario')
+        this.eventos()
+    }
 
-// sempre que o formulario der um 'submit' executa essas funções
-formulario.addEventListener('submit', function (e) {
-    e.preventDefault()
-    valorPrincipal()
-})
+    eventos() {
+        this.formulario.addEventListener('submit', (e)=> {
+            e.preventDefault()
+            this.valorPrincipal()
+        })
+    }
 
-function valorPrincipal() {
-    const p = formulario.querySelector('#valorPrincipal')
-    const r = formulario.querySelector('#taxaJuros')
-    const n = formulario.querySelector('#meses')
+    valorPrincipal() {
+        const p = this.formulario.querySelector('#valorPrincipal')
+        const r = this.formulario.querySelector('#taxaJuros')
+        const n = this.formulario.querySelector('#meses')
 
-    caluclar(p.value, r.value, n.value)
-    console.log(p.value, r.value, n.value);
+        this.caluclar(p.value, r.value, n.value)
+        console.log(p.value, r.value, n.value);
+    }
+
+    caluclar(p, r, n) {
+        let m = p * (1 + r / 100) ** n
+        const montante = Math.floor(m)
+        this.setResultado(montante)
+    }
+
+    setResultado(msg) {
+        const resultado = document.getElementById('resultado')
+        resultado.innerText = 'R$: ' + msg
+        resultado.classList.add('result')
+    }
 }
-
-function caluclar(p, r, n) {
-    let m = p * (1 + r / 100) ** n
-    const montante = Math.floor(m)
-    setResultado(montante)
-}
-
-function setResultado(msg) {
-    const resultado = document.getElementById('resultado')
-    resultado.innerText = 'R$: ' + msg
-    resultado.classList.add('result')
-
-}
+const calculadora = new Calculadora()
