@@ -58,8 +58,7 @@ form button:hover {
 }
 .result {
   margin: auto;
-  width: 100px;
-  padding: 10px 0;
+  width: 10vw;
   border: 1px solid grey;
   text-align: center;
   font-size: 22px;

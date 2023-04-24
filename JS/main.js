@@ -22,7 +22,7 @@ class Calculadora {
 
     caluclar(p, r, n) {
         let m = p * (1 + r / 100) ** n
-        const montante = Math.round(m)
+        const montante = m.toFixed(2)
         this.setResultado(montante)
     }
 
